@@ -20,7 +20,6 @@
                                         <p style="text-align: center">{{ $list->discription }}</p>
                                     </div>
                                 </a>
-
                             </div>
                         @endforeach
                     </div>
@@ -40,11 +39,11 @@
                     <div class="card" style="width: 18rem;">
                         <a href="detail/{{ $list->id }}">
                             <img src="{{ asset('storage/media/' . $list->image) }}" class="card-img-top" alt="...">
-                            <div>
-                                <h5 style="text-align: center">{{ $list->name }}</h5>
-                            </div>
                         </a>
-
+                        <div class="price_name">
+                            <h5 style="text-align: center">{{ $list->name }}</h5>
+                            <h6 style="text-align: center">price:{{ $list->price }}₹</h6>
+                        </div>
                     </div>
                 @endforeach
             </div>

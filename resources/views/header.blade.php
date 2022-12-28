@@ -3,6 +3,7 @@ use App\Http\Controllers\ProductController;
 $total = 0;
 if (session()->has('user')) {
     $total = ProductController::cartItem();
+} else {
 }
 ?>
 <div class="container">
@@ -15,8 +16,8 @@ if (session()->has('user')) {
                         <li class="nav-item ">
                             <a class="nav-link" href="/product">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/order">Orders</a>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/ordertable">Order</a>
                         </li>
                     </ul>
                     <form action="search" class="form-inline mr-5">
@@ -40,6 +41,7 @@ if (session()->has('user')) {
                             </li>
                         @else
                             <a class="nav-link" href="/">Login</a>
+                            <a class="nav-link" href="/register">Register</a>
                         @endif
                     </ul>
                 </div>

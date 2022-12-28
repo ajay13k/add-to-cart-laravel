@@ -6,10 +6,6 @@
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td>Price</td>
-                            <td>{{ $product }}</td>
-                        </tr>
-                        <tr>
                             <td>Tax</td>
                             <td>0</td>
                         </tr>
@@ -30,8 +26,6 @@
                     </div>
                     <div class="form-group">
                         <label for="">Payment Method</label><br>
-                        <input name="payment" value="online" type="radio">
-                        <label for="html">Online Payment</label><br>
                         <input name="payment" value="cash" type="radio">
                         <label for="css">Cash On Delivery</label><br>
                     </div>

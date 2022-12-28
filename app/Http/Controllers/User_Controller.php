@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -13,15 +12,44 @@ class User_Controller extends Controller
         $user = User::where(['email' => $request->email])->first();
         if ($user && Hash::check($request->password, $user->password)) {
             $request->session()->put('user', $user);
-            return redirect('/product');
+            if ($request->session()->get('user')['role'] == 1) {
+                return redirect('/admin/producttable');
 
+            } else {
+                return redirect('/product');
+
+            }
         } else {
 
             return "username or password is not matched";
         }
-
     }
 
+    public function register(Request $request)
+    {
+        return view('register');
+    }
+
+    public function createregister(Request $request)
+    {
+
+        $user = new User();
+        $user->name = $request->post('name');
+        $user->email = $request->post('email');
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect('/');
+        // $user = User::where(['email' => $request->email])->first();
+        // if ($user && Hash::check($request->password, $user->password)) {
+        //     $request->session()->put('user', $user);
+        //     return redirect('/product');
+
+        // } else {
+
+        //     return "username or password is not matched";
+        // }
+
+    }
 
     public function logout(Request $request)
     {

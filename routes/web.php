@@ -32,21 +32,32 @@ Route::get('/', function () {
 Route::get('/product', [ProductController::class, 'product']);
 
 Route::post('/login', [User_Controller::class, 'login']);
+Route::get('/register', [User_Controller::class, 'register']);
+Route::post('/regiteru', [User_Controller::class, 'createregister']);
+
 Route::get('/logout', [User_Controller::class, 'logout']);
 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 Route::get('/search', [ProductController::class, 'search']);
+
 Route::post('/cart', [ProductController::class, 'cart']);
-
-
 Route::get('/cartList', [ProductController::class, 'cartList']);
-
 Route::get('/cartremove/{id}', [ProductController::class, 'cartremove']);
+Route::post('/cartupdate', [ProductController::class, 'cartupdate']);
+
+
 
 Route::get('/order', [ProductController::class, 'order']);
 Route::post('/orderplace', [ProductController::class, 'orderplace']);
 
-Route::get('/producttable', [ProductController::class, 'index']);
+
+Route::get('/ordertable', [ProductController::class, 'ordertable']);
+
+
+
+//admin product
+
+Route::get('admin/producttable', [ProductController::class, 'index']);
 Route::get('/addproduct', [ProductController::class, 'addproduct']);
 
 

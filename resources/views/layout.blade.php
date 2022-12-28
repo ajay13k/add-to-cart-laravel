@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,12 +29,24 @@
         float: left;
         width: 33.33%;
     }
-    .removecart{
+
+    .removecart {
         text-align: center
     }
 
+    .bg-primary {
+        background-color: #cccccc !important;
 
+    }
+
+    .text-white {
+        color: black !important;
+    }
+    .price_name{
+        list-style: none;
+        color: black;
+
+    }
 </style>
-
 
 </html>
